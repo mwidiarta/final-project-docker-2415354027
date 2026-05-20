@@ -55,9 +55,6 @@ Disini buat services dan download alat alat yang diperlukan seperti mysql, redis
 
 Aturan ini untuk menginstall image backend nantinya dimana dipakai node js alpine
 
-**Dokumentasi/Screenshot:**
-<img src="img/screenshot-hasil-browser.png" alt="Aplikasi Berjalan di Browser" width="500">
-
 ---
 
 ### Langkah 5: Buat juga .dockerignore
