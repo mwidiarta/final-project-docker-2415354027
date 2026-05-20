@@ -22,6 +22,7 @@
 
 ### Langkah 1: Membuat struktur folder project
 
+```bash
 project-app/
 ├── app/
 │ ├── Dockerfile
@@ -31,18 +32,15 @@ project-app/
 │ ├── package.json
 │ └── app.js
 └── docker-compose.yml
+```
 
 ### Langkah 2: Melakukan npm int dan menginstall depedensi
 
-Lakukan npm init pada folder app pada project-app kita
-
-# Contoh perintah terminal yang dijalankan
-
-npm init -y
+Lakukan npm init pada folder "app" pada project-app kita
 
 ```bash
 # Contoh perintah terminal yang dijalankan
-docker build -t app-good .
+npm init -y .
 ```
 
 **Dokumentasi/Screenshot:**
@@ -50,33 +48,50 @@ docker build -t app-good .
 
 ---
 
-### Langkah 2: [Tulis Nama Langkah 2, Contoh: Tag dan Push ke Docker Hub]
+### Langkah 3: Buat perintah services di docker-compose.yaml
 
-Jelaskan proses penamaan ulang _image_ dan proses unggah ke Docker Hub milik Anda.
-
-```bash
-docker tag app-good madedianpp/app-good:v1.0
-docker push madedianpp/app-good:v1.0
-```
+Disini buat services dan download alat alat yang diperlukan seperti mysql, redis, phpmyadmin, dan nodejs untuk backend.
 
 **Dokumentasi/Screenshot:**
 ![Proses Push Berhasil](dokumentasi/push-docker-hub.png)
 
 ---
 
-### Langkah 3: [Tulis Nama Langkah 3, Contoh: Pengujian Pull dan Run Container]
+### Langkah 4: Buat juga aturan di Dockerfile
 
-Jelaskan bagaimana cara melakukan verifikasi atau pengujian bahwa praktikum Anda berhasil berjalan.
-
-```bash
-docker run -d -p 8080:8080 madedianpp/app-good:v1.0
-```
+Aturan ini untuk menginstall image backend nantinya dimana dipakai node js alpine
 
 **Dokumentasi/Screenshot:**
 <img src="img/screenshot-hasil-browser.png" alt="Aplikasi Berjalan di Browser" width="500">
 
 ---
 
+### Langkah 5: Buat juga .dockerignore
+
+ini untuk mencegah packet packet ikut ke build di docker
+
+---
+
+### Langkah 6: Jalankan perintah docker compose untuk membuild docker
+
+Perintah ini akan melakukan build docker secara otomatis sesuai aturan docker-compose.yaml tadi
+
+```bash
+# Contoh perintah terminal yang dijalankan
+sudo docker compose up -d --build
+```
+
+### Langkah 6: Pengujian API
+
+## Setelah backend selesai lalu lakukan pengujian api melalui tool khusus, seperti Bruno.
+
+**Dokumentasi/Screenshot:**
+![Dokomentasi](./img/image.png)
+![Dokomentasi](./img/image2.png)
+![Dokomentasi](./img/image3.png)
+
+---
+
 ## Kesimpulan
 
-Tuliskan kesimpulan singkat atau kendala yang Anda hadapi beserta solusinya selama melakukan praktikum ini di sini.
+Kesimpulannya docker itu akan membungkus semua aplikasi kita dan juga nantinya aplikasi itu akan bisa dijalankan di perangkat lain karena packet packetnya semuanya sudah terinstall disana.
