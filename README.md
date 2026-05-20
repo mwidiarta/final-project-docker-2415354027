@@ -43,17 +43,11 @@ Lakukan npm init pada folder "app" pada project-app kita
 npm init -y .
 ```
 
-**Dokumentasi/Screenshot:**
-![Proses Build Sukses](img/screenshot-langkah1.png)
-
 ---
 
 ### Langkah 3: Buat perintah services di docker-compose.yaml
 
 Disini buat services dan download alat alat yang diperlukan seperti mysql, redis, phpmyadmin, dan nodejs untuk backend.
-
-**Dokumentasi/Screenshot:**
-![Proses Push Berhasil](dokumentasi/push-docker-hub.png)
 
 ---
 
